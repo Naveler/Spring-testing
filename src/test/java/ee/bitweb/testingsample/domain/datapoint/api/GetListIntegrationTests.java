@@ -35,6 +35,16 @@ class GetListIntegrationTests {
 
     @Test
     @Transactional
+    void onValidRequestAndEmptyDatabaseShouldReturnSuccessfulEmptyResponse() throws Exception {
+
+        mockMvc.perform(createDefaultRequest())
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(0)));
+    }
+
+    @Test
+    @Transactional
     void onValidRequestShouldReturnSuccessfulResponse() throws Exception {
         DataPoint point1 = repository.save(DataPointHelper.create(1L));
         DataPoint point2 = repository.save(DataPointHelper.create(2L));
