@@ -29,6 +29,7 @@ ext {
 dependencies {
     // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
     implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.5'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
 
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-jpamodelgen
     annotationProcessor group: 'org.hibernate', name: 'hibernate-jpamodelgen', version: '5.4.31.Final'
